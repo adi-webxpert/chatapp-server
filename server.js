@@ -1,5 +1,7 @@
 const express = require("express");
 const getAllChat = require("./users");
+const cors = require("cors");
+
 const io = require("socket.io")(8080, {
   cors: {
     origin: "http://localhost:3000", // Ensure no extra spaces
@@ -7,6 +9,8 @@ const io = require("socket.io")(8080, {
 });
 const app = express();
 // meddleware :-
+app.use(cors());
+
 app.use(express.json());
 console.log("Server running on http://localhost:8080");
 
