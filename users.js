@@ -140,10 +140,8 @@ app.post("/register", async (req, res) => {
       message: "user register succes",
       data: register,
     });
-    console.log("register succes", register);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
-    console.log("error adding user:", error);
   }
 });
 
@@ -155,7 +153,6 @@ app.get("/all/register", async (req, res) => {
       message: "All user succes",
       data: allRegister,
     });
-    console.log("All register succes", allRegister);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
     console.log("error adding user:", error);
